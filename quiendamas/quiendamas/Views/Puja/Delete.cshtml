@@ -1,0 +1,57 @@
+﻿@model quiendamas.Models.Puja
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Puja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.subasta.ganador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subasta.ganador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidadParticipaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidadParticipaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaPuja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaPuja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
