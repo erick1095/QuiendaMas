@@ -21,6 +21,7 @@ namespace quiendamas.Controllers
             return View(subasta.ToList());
         }
 
+        [Authorize(Roles = "Administrador")]
         // GET: Subasta/Details/5
         public ActionResult Details(int? id)
         {
@@ -37,9 +38,11 @@ namespace quiendamas.Controllers
         }
 
         // GET: Subasta/Create
-        public ActionResult Create()
+        [Authorize(Roles = "Administrador")]
+        public ActionResult Create(int id)
         {
             ViewBag.articuloID = new SelectList(db.Articulo, "articuloID", "nombre");
+            ViewBag.articuloID = id;
             return View();
         }
 
@@ -47,8 +50,9 @@ namespace quiendamas.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "subastaID,estado,fechaInicio,fechaFin,ganador,articuloID")] Subasta subasta)
+        public ActionResult Create(Subasta subasta)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +66,7 @@ namespace quiendamas.Controllers
         }
 
         // GET: Subasta/Edit/5
+        [Authorize(Roles = "Administrador")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -81,6 +86,7 @@ namespace quiendamas.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "subastaID,estado,fechaInicio,fechaFin,ganador,articuloID")] Subasta subasta)
         {
@@ -95,6 +101,7 @@ namespace quiendamas.Controllers
         }
 
         // GET: Subasta/Delete/5
+        [Authorize(Roles = "Administrador")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,6 +119,7 @@ namespace quiendamas.Controllers
         // POST: Subasta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public ActionResult DeleteConfirmed(int id)
         {
             Subasta subasta = db.Subasta.Find(id);
@@ -119,7 +127,7 @@ namespace quiendamas.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = "Administrador")]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

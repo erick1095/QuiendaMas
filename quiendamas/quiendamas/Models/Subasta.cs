@@ -11,7 +11,11 @@ namespace quiendamas.Models
         [Key]
         public int subastaID { get; set; }
         public Boolean estado { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime fechaInicio { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime fechaFin { get; set; }
         public string ganador { get; set; }
 

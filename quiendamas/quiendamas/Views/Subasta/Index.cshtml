@@ -8,7 +8,14 @@
 <h2>Index</h2>
 
 <p>
+
+@if (Request.IsAuthenticated)
+{
+    if (User.IsInRole("Administrador"))
+    {
     @Html.ActionLink("Create New", "Create")
+    }
+}
 </p>
 <table class="table">
     <tr>
@@ -47,11 +54,18 @@
         <td>
             @Html.DisplayFor(modelItem => item.ganador)
         </td>
+
+@if (Request.IsAuthenticated)
+{
+    if (User.IsInRole("Administrador"))
+    {
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.subastaID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.subastaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.subastaID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.subastaID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.subastaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.subastaID })
         </td>
+    }
+}
     </tr>
 }
 

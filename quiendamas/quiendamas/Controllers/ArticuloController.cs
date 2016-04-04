@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace quiendamas.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class ArticuloController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -35,6 +36,10 @@ namespace quiendamas.Controllers
             }
             return View(articulo);
         }
+        public ActionResult Subasta()
+        {
+            return RedirectToAction("Create", "Subasta");
+        }
 
         // GET: Articulo/Create
         public ActionResult Create()
@@ -47,7 +52,7 @@ namespace quiendamas.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "articuloID,nombre,estadoArticulo,costo,descripcion,UserID")] Articulo articulo)
+        public ActionResult Create(Articulo articulo)
         {
             if (ModelState.IsValid)
             {

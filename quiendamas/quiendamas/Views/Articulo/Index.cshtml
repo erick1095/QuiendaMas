@@ -49,6 +49,8 @@
             @Html.DisplayFor(modelItem => item.UserID)
         </td>
         <td>
+
+            @Html.ActionLink("Subastar", "Create","Subasta", new { id = item.articuloID },null ) |
             @Html.ActionLink("Modificar", "Edit", new { id=item.articuloID }) |
             @Html.ActionLink("Detalles", "Details", new { id=item.articuloID }) |
             @Html.ActionLink("Eliminar", "Delete", new { id=item.articuloID })
@@ -92,7 +94,8 @@
                 <h4 class="modal-title">Detalles</h4>
             </div>
             <div class="modal-body">
-            @Html.Partial("Details",nuevoArticulo)
+            @*@Html.Partial("Details", nuevoArticulo);*@
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
