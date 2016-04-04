@@ -16,7 +16,7 @@ namespace quiendamas.Models
         public int subastaID { get; set; }
         public virtual Subasta subasta { get; set; }
 
-        public String UserID { get; set; }
+        public String Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
     }

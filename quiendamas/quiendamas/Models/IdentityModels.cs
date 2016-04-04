@@ -31,7 +31,6 @@ namespace quiendamas.Models
         //public Image fotografia { get; set; }
 
 
-
         public virtual ICollection<Puja> pujas { get; set; }
         public virtual ICollection<Articulo> articulos { get; set; }
     }

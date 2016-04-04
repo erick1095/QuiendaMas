@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using quiendamas.Models;
+using Microsoft.AspNet.Identity;
 
 namespace quiendamas.Controllers
 {
@@ -37,29 +38,41 @@ namespace quiendamas.Controllers
         }
 
         // GET: Puja/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            ViewBag.subastaID = new SelectList(db.Subasta, "subastaID", "ganador");
-            return View();
+            int cantidadAnterior=0;
+            //ViewBag.subastaID = new SelectList(db.Subasta, "subastaID", "ganador");
+            //ViewBag.IDSubasta = id;
+                   Puja puja = new Puja();
+                   puja.subastaID = id;
+                   puja.Id = User.Identity.GetUserId();
+                 try {
+                    cantidadAnterior = db.Puja.Where(mov => mov.subastaID == puja.subastaID && mov.Id == puja.Id).OrderByDescending(mov => mov.fechaPuja).First().cantidadParticipaciones;
+                     } catch { }
+                   puja.fechaPuja = DateTime.Now;
+                   puja.cantidadParticipaciones = cantidadAnterior + 1;
+                   db.Puja.Add(puja);
+                   db.SaveChanges();
+                    return RedirectToAction("Details", "Subasta", new { id = id });
         }
 
         // POST: Puja/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "pujaID,cantidadParticipaciones,fechaPuja,subastaID,UserID")] Puja puja)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Puja.Add(puja);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "pujaID,cantidadParticipaciones,fechaPuja,subastaID,UserID")] Puja puja)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Puja.Add(puja);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            ViewBag.subastaID = new SelectList(db.Subasta, "subastaID", "ganador", puja.subastaID);
-            return View(puja);
-        }
+        //    ViewBag.subastaID = new SelectList(db.Subasta, "subastaID", "ganador", puja.subastaID);
+        //    return View(puja);
+        //}
 
         // GET: Puja/Edit/5
         public ActionResult Edit(int? id)

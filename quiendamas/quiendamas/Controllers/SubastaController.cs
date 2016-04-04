@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using quiendamas.Models;
+using Microsoft.AspNet.Identity;
 
 namespace quiendamas.Controllers
 {
@@ -15,10 +16,17 @@ namespace quiendamas.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Subasta
+        [Authorize]
         public ActionResult Index()
         {
             var subasta = db.Subasta.Include(s => s.articulo);
             return View(subasta.ToList());
+        }
+        [Authorize]
+        public ActionResult misSubastas(String id)
+        {
+            var pujas = db.Puja.Where(sub => sub.Id == id);
+            return View(pujas.ToList());
         }
 
         [Authorize(Roles = "Administrador")]

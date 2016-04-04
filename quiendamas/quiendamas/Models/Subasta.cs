@@ -18,12 +18,14 @@ namespace quiendamas.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime fechaFin { get; set; }
         public string ganador { get; set; }
+        public TimeSpan tiempo { get; set; }
 
         //una subasta puede tener muchos participantes y solo un articulo
         public int articuloID { get; set; }
         public virtual Articulo articulo { get; set; }
 
         public virtual ICollection<Puja> pujas { get; set; }
+
 
 
     }

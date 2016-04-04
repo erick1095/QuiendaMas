@@ -62,9 +62,16 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.subastaID }) |
             @Html.ActionLink("Details", "Details", new { id = item.subastaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.subastaID })
+            @Html.ActionLink("Delete", "Delete", new { id = item.subastaID }) |
         </td>
     }
+    else if (!User.IsInRole("Administrador"))
+    {
+        <td>
+            @Html.ActionLink("Pujar", "Create", "Puja", new { id = item.subastaID }, null)
+        </td>
+    }
+
 }
     </tr>
 }

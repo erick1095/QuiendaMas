@@ -54,6 +54,13 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.subastaID }) |
+@if (Request.IsAuthenticated)
+{
+    if (User.IsInRole("Administrador"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.subastaID })
+    }
+}
+    @Html.ActionLink("Pujar", "Create","Puja", new { id = Model.subastaID },null)
     @Html.ActionLink("Back to List", "Index")
 </p>

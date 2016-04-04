@@ -146,3 +146,6 @@ C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quien
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.csproj.GenerateResource.Cache
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.dll
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.pdb
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate4.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate5.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate6.resources
