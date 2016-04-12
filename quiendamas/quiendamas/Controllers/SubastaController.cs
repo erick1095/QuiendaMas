@@ -19,17 +19,31 @@ namespace quiendamas.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var subasta = db.Subasta.Include(s => s.articulo);
-            return View(subasta.ToList());
+
+                    var subasta = db.Subasta.Include(s => s.articulo);
+                    return View(subasta.ToList());
+
         }
         [Authorize]
         public ActionResult misSubastas(String id)
         {
-            var pujas = db.Puja.Where(sub => sub.Id == id);
-            return View(pujas.ToList());
+            if (Request.IsAuthenticated)
+            {
+                if (User.IsInRole("Administrador"))
+                {
+                    var subasta = db.Subasta.Include(s => s.articulo);
+
+                    return View(subasta.ToList());
+                }
+            }
+            var Subastas = from puja in db.Puja
+                           where puja.Id == id
+                           select puja.subasta;
+
+            return View(Subastas.ToList());
         }
 
-        [Authorize(Roles = "Administrador")]
+        //[Authorize(Roles = "Administrador")]
         // GET: Subasta/Details/5
         public ActionResult Details(int? id)
         {

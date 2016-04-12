@@ -13,11 +13,15 @@ namespace quiendamas.Models
         public Boolean estado { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Fecha Inicio")]
         public DateTime fechaInicio { get; set; }
+        [Display(Name = "Fecha Fin")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime fechaFin { get; set; }
+        [Display(Name = "Ganador")]
         public string ganador { get; set; }
+        [Display(Name = "Tiempo")]
         public TimeSpan tiempo { get; set; }
 
         //una subasta puede tener muchos participantes y solo un articulo
@@ -25,8 +29,5 @@ namespace quiendamas.Models
         public virtual Articulo articulo { get; set; }
 
         public virtual ICollection<Puja> pujas { get; set; }
-
-
-
     }
 }

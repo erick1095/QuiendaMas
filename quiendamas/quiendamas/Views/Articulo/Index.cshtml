@@ -7,9 +7,9 @@
 }
 
 @*<h2>Index</h2>*@
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAlta" style="margin-top: 20px">Nuevo Articulo</button>
+@*<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAlta" style="margin-top: 20px">Nuevo Articulo</button>*@
 <p>
-    @*@Html.ActionLink("Nuevo Articulo", "Create")*@
+    @Html.ActionLink("Nuevo Articulo", "Create")
 </p>
 <table class="table">
     <tr>
@@ -25,9 +25,9 @@
         <th>
             @Html.DisplayNameFor(model => model.descripcion)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserID)
-        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ApplicationUser.nombre)
+        </th*@>
         <th></th>
     </tr>
 
@@ -46,7 +46,7 @@
             @Html.DisplayFor(modelItem => item.descripcion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserID)
+            @Html.DisplayFor(modelItem => item.ApplicationUser.nombre)
         </td>
         <td>
 

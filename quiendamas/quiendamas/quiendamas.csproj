@@ -204,6 +204,18 @@
     <Compile Include="Migrations\201604040603442_InitialCreate6.Designer.cs">
       <DependentUpon>201604040603442_InitialCreate6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604041929295_InitialCreate7.cs" />
+    <Compile Include="Migrations\201604041929295_InitialCreate7.Designer.cs">
+      <DependentUpon>201604041929295_InitialCreate7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604051751208_InitialCreate8.cs" />
+    <Compile Include="Migrations\201604051751208_InitialCreate8.Designer.cs">
+      <DependentUpon>201604051751208_InitialCreate8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604051908333_InitialCreate9.cs" />
+    <Compile Include="Migrations\201604051908333_InitialCreate9.Designer.cs">
+      <DependentUpon>201604051908333_InitialCreate9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Articulo.cs" />
@@ -284,6 +296,7 @@
     <Content Include="Views\Puja\Details.cshtml" />
     <Content Include="Views\Puja\Edit.cshtml" />
     <Content Include="Views\Puja\Index.cshtml" />
+    <Content Include="Views\Subasta\misSubastas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,6 +330,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604040603442_InitialCreate6.resx">
       <DependentUpon>201604040603442_InitialCreate6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604041929295_InitialCreate7.resx">
+      <DependentUpon>201604041929295_InitialCreate7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604051751208_InitialCreate8.resx">
+      <DependentUpon>201604051751208_InitialCreate8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604051908333_InitialCreate9.resx">
+      <DependentUpon>201604051908333_InitialCreate9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

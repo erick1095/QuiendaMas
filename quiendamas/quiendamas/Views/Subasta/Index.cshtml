@@ -3,9 +3,10 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>*@
 
 <p>
 
@@ -13,7 +14,7 @@
 {
     if (User.IsInRole("Administrador"))
     {
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
     }
 }
 </p>
@@ -22,18 +23,18 @@
         <th>
             @Html.DisplayNameFor(model => model.articulo.nombre)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.estado)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.fechaInicio)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.fechaFin)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ganador)
-        </th>
+        @*<th>
+            @Html.DisplayName("Tokens")
+        </th>*@
         <th></th>
     </tr>
 
@@ -42,18 +43,18 @@
         <td>
             @Html.DisplayFor(modelItem => item.articulo.nombre)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.estado)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.fechaInicio)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.fechaFin)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.ganador)
-        </td>
+        </td>*@
 
 @if (Request.IsAuthenticated)
 {
@@ -68,7 +69,7 @@
     else if (!User.IsInRole("Administrador"))
     {
         <td>
-            @Html.ActionLink("Pujar", "Create", "Puja", new { id = item.subastaID }, null)
+            @Html.ActionLink("Token", "Create", "Puja", new { id = item.subastaID }, null)
         </td>
     }
 

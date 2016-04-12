@@ -149,3 +149,6 @@ C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quien
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate4.resources
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate5.resources
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate6.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate7.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate8.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate9.resources
