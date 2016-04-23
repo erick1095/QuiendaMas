@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    String Participante = (String)Session["NombreCompleto"];
 
 }
 
@@ -32,6 +33,10 @@
         <th>
             @Html.DisplayNameFor(model => model.fechaFin)
         </th>
+
+        @*<th>
+            @Html.DisplayName("Participante")
+        </th>*@
         @*<th>
             @Html.DisplayName("Tokens")
         </th>*@
@@ -52,6 +57,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.fechaFin)
         </td>
+
+        @*<td>
+            @Html.Display(Participante)
+        </td>*@
         @*<td>
             @Html.DisplayFor(modelItem => item.ganador)
         </td>*@

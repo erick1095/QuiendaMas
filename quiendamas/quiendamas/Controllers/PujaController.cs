@@ -52,24 +52,42 @@ namespace quiendamas.Controllers
         }
 
         // GET: Puja/Create
-        //[Authorize]
+        [Authorize]
         public ActionResult Create(int id)
         {
-            int cantidadAnterior=0;
+            int cantidadAnterior = 0,cantRegistros = 0;
             //ViewBag.subastaID = new SelectList(db.Subasta, "subastaID", "ganador");
             //ViewBag.IDSubasta = id;
-                   Puja puja = new Puja();
+            String userId = User.Identity.GetUserId();
+            try {
 
-                 //try {
-                 //   cantidadAnterior = db.Puja.Where(mov => mov.subastaID == puja.subastaID && mov.Id == puja.Id).OrderByDescending(mov => mov.fechaPuja).First().cantidadParticipaciones;
-                 //    } catch { }
+                var pu = db.Puja.Where(p=>p.subastaID==id&&p.Id== userId);
+                cantRegistros = pu.Count();
+            }
+            catch { }
+            if (cantRegistros > 0)
+            {
+                Puja puja = db.Puja.Where(p => p.Id == userId && p.subastaID==id).First();
+                cantidadAnterior = db.Puja.Where(mov => mov.subastaID == id && mov.Id == userId).First().cantidadParticipaciones;
+                puja.cantidadParticipaciones = cantidadAnterior + 1;
+                db.Entry(puja).State = EntityState.Modified;
+                db.SaveChanges();
+                ViewBag.Tiempo = (int)db.Subasta.Find(id).tiempo;
+                ViewBag.Participaciones = puja.cantidadParticipaciones;
+                return RedirectToAction("Details", "Subasta", new { id = id });
+            }
+            else {
+                Puja puja = new Puja();
                 puja.cantidadParticipaciones = 1;
                 puja.subastaID = id;
-                puja.Id = User.Identity.GetUserId();
-                puja.fechaPuja = DateTime.Now;
+                puja.Id = userId;
+                puja.fechaPuja = DateTime.Today;
                 db.Puja.Add(puja);
                 db.SaveChanges();
+                ViewBag.Tiempo = (int)db.Subasta.Find(id).tiempo;
+                ViewBag.Participaciones = puja.cantidadParticipaciones;
                 return RedirectToAction("Details", "Subasta", new { id = id });
+            }
 
 
         }
@@ -115,7 +133,7 @@ namespace quiendamas.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrador")]
-        public ActionResult Edit([Bind(Include = "pujaID,cantidadParticipaciones,fechaPuja,subastaID,UserID")] Puja puja)
+        public ActionResult Edit(Puja puja)
         {
             if (ModelState.IsValid)
             {

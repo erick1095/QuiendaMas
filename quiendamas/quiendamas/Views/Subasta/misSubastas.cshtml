@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    //int cantidadParticipaciones = ViewBag.Participaciones;
 
 }
 
@@ -54,8 +55,8 @@
                 @Html.DisplayFor(modelItem => item.fechaFin)
             </td>
             <td>
-                    @Html.DisplayFor(modelItem => item.pujas.Count)
-                </td>
+                @Html.DisplayFor(modelItem => item.pujas.First().cantidadParticipaciones)
+            </td>
 
             @if (Request.IsAuthenticated)
             {

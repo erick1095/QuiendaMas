@@ -21,5 +21,9 @@ namespace quiendamas.Models
         public String Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
+        internal int Count()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -3,12 +3,55 @@
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    //int tiempo = 0;
+    //int tiempoServer = ViewBag.Tiempo;
+    //if (tiempoServer != 0)
+    //{
+    //    tiempo = ViewBag.Tiempo;
+    //}
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>Subasta</h4>
+    @*<script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+    </script>
+    <h4>
+@if (tiempo != 0)
+{
+    <script>
+        window.onload = function () {
+            var Time = 60 * tiempo,
+                display = document.querySelector('#Tiempo');
+            startTimer(Time, display);
+        };
+
+    </script>
+        <h1 id="Tiempo"></h1>
+
+}
+else
+{
+       <h1>00:00:00</h1>
+}*@
+
+    </h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -61,6 +104,6 @@
         @Html.ActionLink("Edit", "Edit", new { id = Model.subastaID })
     }
 }
-    @Html.ActionLink("Pujar", "Create","Puja", new { id = Model.subastaID },null)
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Token", "Create","Puja", new { id = Model.subastaID },null)
+    @*@Html.ActionLink("Back to List", "Index")*@
 </p>

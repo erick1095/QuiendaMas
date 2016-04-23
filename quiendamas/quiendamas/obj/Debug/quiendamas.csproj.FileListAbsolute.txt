@@ -138,7 +138,6 @@ C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\bin\Microsoft.O
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.csprojResolveAssemblyReference.cache
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate.resources
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate1.resources
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate2.resources
@@ -152,3 +151,6 @@ C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quien
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate7.resources
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate8.resources
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate9.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.timechange.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.timechangeint.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.csprojResolveAssemblyReference.cache

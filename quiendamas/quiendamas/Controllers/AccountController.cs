@@ -51,7 +51,13 @@ namespace quiendamas.Controllers
                 _userManager = value;
             }
         }
-
+        //[Authorize]
+        //public ActionResult nombre(String ID,Subasta subastas)
+        //{
+        //    String NombreCompleto = UserManager.FindById(ID).nombre + " " + UserManager.FindById(ID).apellido;
+        //    Session["NombreCompleto"] = NombreCompleto;
+        //    return View("nombre","Subasta", subastas);
+        //}
         //
         // GET: /Account/Login
         [AllowAnonymous]

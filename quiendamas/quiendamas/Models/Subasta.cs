@@ -22,7 +22,7 @@ namespace quiendamas.Models
         [Display(Name = "Ganador")]
         public string ganador { get; set; }
         [Display(Name = "Tiempo")]
-        public TimeSpan tiempo { get; set; }
+        public int tiempo { get; set; }
 
         //una subasta puede tener muchos participantes y solo un articulo
         public int articuloID { get; set; }

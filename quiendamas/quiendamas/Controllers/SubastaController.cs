@@ -21,26 +21,35 @@ namespace quiendamas.Controllers
         {
 
                     var subasta = db.Subasta.Include(s => s.articulo);
-                    return View(subasta.ToList());
+            //Puja ultimoToken = (Puja)db.Puja.Where(p=>p.fechaPuja<=DateTime.Now).Last();
+            //var ultimaPuja = from p in db.Puja
+            //          where p.fechaPuja <= DateTime.Now
+            //          select p.Id.Take();
+            //String ID = (String)ultimaPuja;
+            //return RedirectToAction("nombre","Account",new { ID=ID, subastas=subasta.ToList() });
+            return View(subasta.ToList());
 
         }
         [Authorize]
         public ActionResult misSubastas(String id)
         {
-            if (Request.IsAuthenticated)
-            {
+
                 if (User.IsInRole("Administrador"))
                 {
                     var subasta = db.Subasta.Include(s => s.articulo);
 
                     return View(subasta.ToList());
                 }
+            else {
+                var Subastas = from puja in db.Puja
+                               where puja.Id == id
+                               select puja.subasta;
+                //var participaciones = from puja in db.Puja
+                //               where puja.Id == id 
+                //               select puja.cantidadParticipaciones;
+                //ViewBag.Participaciones = (int)participaciones.First();
+                return View(Subastas.ToList());
             }
-            var Subastas = from puja in db.Puja
-                           where puja.Id == id
-                           select puja.subasta;
-
-            return View(Subastas.ToList());
         }
 
         //[Authorize(Roles = "Administrador")]
@@ -110,7 +119,7 @@ namespace quiendamas.Controllers
         [HttpPost]
         [Authorize(Roles = "Administrador")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "subastaID,estado,fechaInicio,fechaFin,ganador,articuloID")] Subasta subasta)
+        public ActionResult Edit(Subasta subasta)
         {
             if (ModelState.IsValid)
             {
