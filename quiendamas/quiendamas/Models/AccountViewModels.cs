@@ -81,6 +81,8 @@ namespace quiendamas.Models
         public string telefono { get; set; }
         [Display(Name = "No. Casa")]
         public int noCasa { get; set; }
+        [Display(Name = "Token")]
+        public int cantToken { get; set; }
         //public Image fotografia { get; set; }
 
         [Required]

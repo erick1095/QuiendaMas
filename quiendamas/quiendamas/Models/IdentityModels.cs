@@ -28,6 +28,7 @@ namespace quiendamas.Models
         public string ciudad { get; set; }
         public string telefono { get; set; }
         public int noCasa { get; set; }
+        public int cantToken { get; set; }
         //public Image fotografia { get; set; }
 
 

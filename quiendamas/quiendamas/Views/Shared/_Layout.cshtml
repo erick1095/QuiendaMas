@@ -1,4 +1,7 @@
-﻿
+﻿@{
+  
+
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +40,7 @@
                         else if (!User.IsInRole("Administrador"))
                         {
                             <li>@Html.ActionLink("Mis Subastas", "misSubastas", "Subasta", new { id = User.Identity.GetUserId()}, null)</li>
+                            <li class="navbar-right">tokens</li>
                         }
 
 

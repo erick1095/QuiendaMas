@@ -153,4 +153,9 @@ C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quien
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.InitialCreate9.resources
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.timechange.resources
 C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.timechangeint.resources
-C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.csprojResolveAssemblyReference.cache
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.addNewAtributeToke.resources
+C:\Users\erick\Documents\GitHub\QuiendaMas\quiendamas\quiendamas\obj\Debug\quiendamas.Migrations.addNewAtribut.resources
