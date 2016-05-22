@@ -9,7 +9,14 @@
 {
     @Html.AntiForgeryToken()
     @*<h4>Registro de nuevo usuario</h4>*@
-    <hr />
+
+    <div class="form-group">
+        <label>Tipo de usuario</label>
+        @Html.DropDownList("UserRoles")
+
+    </div>
+
+
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.nombre, new { @class = "col-md-2 control-label" })

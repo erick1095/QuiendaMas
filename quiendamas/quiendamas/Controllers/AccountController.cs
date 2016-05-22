@@ -9,12 +9,14 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using quiendamas.Models;
+using System.Collections.Generic;
 
 namespace quiendamas.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -146,6 +148,10 @@ namespace quiendamas.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ApplicationDbContext dbRol = new ApplicationDbContext();
+            SelectList lista = new SelectList(dbRol.Roles, "Id", "Name");
+
+            ViewBag.UserRoles = lista;
             return View();
         }
 
@@ -154,12 +160,21 @@ namespace quiendamas.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model,string UserRoles)
         {
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email,nombre = model.nombre,apellido = model.apellido,colonia = model.colonia,codigoPostal=model.codigoPostal,pais=model.pais,ciudad=model.ciudad,telefono=model.telefono,noCasa=model.noCasa };
                 var result = await UserManager.CreateAsync(user, model.Password);
+
+                if (UserRoles == "1")
+                {
+                    UserManager.AddToRole(user.Id, "Administrador");
+                }
+                else {
+                    UserManager.AddToRole(user.Id, "Usuario");
+                }
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
@@ -174,6 +189,8 @@ namespace quiendamas.Controllers
                 }
                 AddErrors(result);
             }
+
+         
 
             // If we got this far, something failed, redisplay form
             return View(model);
