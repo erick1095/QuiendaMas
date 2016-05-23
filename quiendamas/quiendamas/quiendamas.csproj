@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201604280144219_addNewAtribut.Designer.cs">
       <DependentUpon>201604280144219_addNewAtribut.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605232244594_errormigration.cs" />
+    <Compile Include="Migrations\201605232244594_errormigration.Designer.cs">
+      <DependentUpon>201605232244594_errormigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Articulo.cs" />
@@ -377,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604280144219_addNewAtribut.resx">
       <DependentUpon>201604280144219_addNewAtribut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605232244594_errormigration.resx">
+      <DependentUpon>201605232244594_errormigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
